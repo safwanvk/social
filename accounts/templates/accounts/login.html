@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<div class="container">
+    <center><h1>Sign in to ZabSocial</h1></center>
+    <form method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <input type="submit" class='btn btn-success' value="Sign in">
+    </form><br>
+    <h6>New to ZabSocial? <a href="{% url 'accounts:signup' %}">Create an account.</a></h6>
+
+</div>
+{% endblock %}
