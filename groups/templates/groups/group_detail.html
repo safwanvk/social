@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'groups/base.html' %}
+{% block pregroup %}
+<h1>{{ group.name }}</h1>
+<h2>Member Count: {{ group.member.count }}</h2>
 
-</body>
-</html>
+<div class="container">
+    {% if user in group.members.all %}
+      <a href='' class='btn btn-lg btn-warning'><span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
+    {% else %}
+      <a href='' class='btn btn-lg btn-warning'><span class="glyphicon glyphicon-ok-circle"></span>Join</a>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block groupcontent %}
+  <div class="col-md-8">
+    {% if group.posts.count == 0 %}
+    <h2>No posts in this group yet!</h2>
+    {% else %}
+      {% for post in group.posts.all %}
+        {% include 'posts/-post.html' %}
+      {% endfor %}
+    {% endif %}
+   </div>
+{% endblock %}
