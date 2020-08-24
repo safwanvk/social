@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'groups/base.html' %}
+{% load crispy_forms_filters %}
+{% block groupcontent %}
+<h4>Create a new group!</h4>
+  <form action="{% url 'groups:create' %}" method='post' id='groupForm'>
+      {% csrf_token %}
+      {{ form | crispy }}
+      <input type="submit" class='btn btn-success btn-large' value="Create">
+    </form>
+{% endblock %}
