@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.views.generic import CreateView, DetailView 
+from django.views.generic import CreateView, DetailView, ListView
 
-from . models import Group, GroupMember
+from .models import Group, GroupMember
 
 
 # Create your views here.
@@ -11,6 +11,10 @@ class CreateGroup(LoginRequiredMixin, CreateView):
     model = Group
     template_name = 'groups/group_form.html'
 
+
 class SingleGroup(DetailView):
     model = Group
 
+
+class ListGroups(ListView):
+    model = Group

@@ -5,5 +5,7 @@ app_name = 'groups'
 
 urlpatterns = [
     path('new/', views.CreateGroup.as_view(), name='create'),
-    path('posts/<slug>/', views.SingleGroup.as_view(), name='single')
+    path('posts/<slug>/', views.SingleGroup.as_view(), name='single'),
+    path('', views.ListGroups.as_view(), name='groups'),
+
 ]
