@@ -1,6 +1,7 @@
+
 from django.conf.urls import url
 
-from social.posts import views
+from . import views
 
 app_name = 'posts'
 

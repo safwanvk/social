@@ -1,6 +1,6 @@
 {% extends 'groups/base.html' %}
 {% load crispy_forms_filters %}
-{% block groupcontent %}
+{% block group_content %}
 <h4>Create a new group!</h4>
   <form action="{% url 'groups:create' %}" method='post' id='groupForm'>
       {% csrf_token %}

@@ -1,4 +1,4 @@
-{% extends 'posts/post_base.html' %}
+{% extends 'posts/base.html' %}
 {% load crispy_forms_filters %}
 {% block post_content %}
 <h4>Create a new Post</h4>
@@ -7,4 +7,4 @@
     {{ form | crispy }}
     <input type="submit" value="Post" class="btn btn-primary btn-large">
 </form>
-{% endlock %}
+{% endblock %}

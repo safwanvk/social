@@ -7,10 +7,10 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       {% if user.is_authenticated %}
          <li class="nav-item active">
-             <a class="nav-link" href="#">Post <span class="sr-only">(current)</span></a>
+             <a class="nav-link" href="{% url 'posts:create' %}">Post<span class="sr-only">(current)</span></a>
          </li>
          <li class="nav-item">
-             <a class="nav-link" href="#">Groups</a>
+             <a class="nav-link" href="{% url 'groups:groups' %}">Groups</a>
          </li>
          <li class="nav-item">
              <a class="nav-link" href="{% url 'groups:create' %}">Create Group</a>
@@ -20,7 +20,7 @@
          </li>
       {% else %}
          <li class="nav-item">
-             <a class="nav-link" href="#">Groups</a>
+             <a class="nav-link" href="{% url 'groups:groups' %}">Groups</a>
          </li>
          <li class="nav-item">
              <a class="nav-link" href="{% url 'accounts:signin' %}">Sign In</a>

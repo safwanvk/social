@@ -10,6 +10,4 @@ urlpatterns = [
     url(r'^$', views.ListGroups.as_view(), name='groups'),
     url(r'join/(?P<slug>[-\w]+)/$', views.JoinGroup.as_view(), name='join'),
     url(r'leave/(?P<slug>[-\w]+)/$', views.LeaveGroup.as_view(), name='leave')
-
-
 ]
