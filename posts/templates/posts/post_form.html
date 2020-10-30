@@ -1,10 +1,12 @@
 {% extends 'posts/base.html' %}
 {% load crispy_forms_filters %}
 {% block post_content %}
-<h4>Create a new Post</h4>
+<div class="container">
+    <h4>Create a new post</h4>
 <form id="postForm" action="{% url 'posts:create' %}" method="post">
     {% csrf_token %}
     {{ form | crispy }}
     <input type="submit" value="Post" class="btn btn-primary btn-large">
 </form>
+</div>
 {% endblock %}
